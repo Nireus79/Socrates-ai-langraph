@@ -1,0 +1,60 @@
+[build-system]
+requires = ["setuptools>=65.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "socrates-ai-langraph"
+version = "0.1.0"
+description = "Socratic AI integration library for LangGraph - framework-agnostic agents"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [
+    {name = "Socrates AI Contributors", email = "support@socrates-ai.dev"}
+]
+keywords = ["socrates", "ai", "langgraph", "agents", "orchestration", "education"]
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Topic :: Software Development :: Libraries :: Python Modules",
+]
+
+dependencies = [
+    "socratic-core>=0.1.1",
+    "langgraph>=1.0.0",
+    "pydantic>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0",
+    "pytest-asyncio>=0.21.0",
+    "pytest-cov>=4.0",
+    "black>=23.0",
+    "ruff>=0.1.0",
+    "mypy>=1.0",
+]
+agents = [
+    "socratic-agents>=0.1.0",
+]
+rag = [
+    "socratic-rag>=0.1.0",
+]
+full = [
+    "socratic-agents>=0.1.0",
+    "socratic-rag>=0.1.0",
+    "socratic-learning>=0.1.1",
+]
+
+[project.urls]
+Homepage = "https://github.com/Nireus79/Socrates"
+Repository = "https://github.com/Nireus79/Socrates"
+Issues = "https://github.com/Nireus79/Socrates/issues"
+Documentation = "https://github.com/Nireus79/Socrates/tree/main/socrates-ai-langraph/docs"
