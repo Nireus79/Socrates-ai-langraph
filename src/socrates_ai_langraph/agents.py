@@ -1,7 +1,7 @@
 """Agent implementations for Socratic AI LangGraph."""
 
 from typing import Any, Dict, List, Optional
-from socratic_core import SocratesConfig, EventEmitter, EventType
+from socratic_core import EventEmitter, EventType
 
 
 class BaseAgent:
