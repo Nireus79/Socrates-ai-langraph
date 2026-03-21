@@ -29,7 +29,7 @@ def get_emitter() -> EventEmitter:
 
 
 def create_socrates_langgraph_workflow(
-    config: Optional[SocratesConfig] = None
+    config: Optional[SocratesConfig] = None,
 ) -> StateGraph:
     """Create a LangGraph workflow with Socratic agents.
 
@@ -55,10 +55,7 @@ def create_socrates_langgraph_workflow(
     # Define nodes
     def analyze_node(state: AgentState) -> AgentState:
         """Analyze input code."""
-        emitter.emit(
-            EventType.AGENT_START,
-            {"node": "analyze", "input_len": len(state.input)}
-        )
+        emitter.emit(EventType.AGENT_START, {"node": "analyze", "input_len": len(state.input)})
 
         result = analyzer.analyze(state.input)
         state.results["analysis"] = result
@@ -68,10 +65,7 @@ def create_socrates_langgraph_workflow(
 
     def retrieve_node(state: AgentState) -> AgentState:
         """Retrieve relevant knowledge."""
-        emitter.emit(
-            EventType.AGENT_START,
-            {"node": "retrieve", "input": state.input}
-        )
+        emitter.emit(EventType.AGENT_START, {"node": "retrieve", "input": state.input})
 
         docs = retriever.retrieve(state.input)
         state.results["knowledge"] = docs
@@ -81,10 +75,7 @@ def create_socrates_langgraph_workflow(
 
     def generate_node(state: AgentState) -> AgentState:
         """Generate code."""
-        emitter.emit(
-            EventType.AGENT_START,
-            {"node": "generate", "input_len": len(state.input)}
-        )
+        emitter.emit(EventType.AGENT_START, {"node": "generate", "input_len": len(state.input)})
 
         code = generator.generate(state.input)
         state.results["generated_code"] = code
@@ -96,7 +87,7 @@ def create_socrates_langgraph_workflow(
         """Synthesize all results."""
         emitter.emit(
             EventType.SYSTEM_INITIALIZED,
-            {"node": "synthesize", "results": list(state.results.keys())}
+            {"node": "synthesize", "results": list(state.results.keys())},
         )
 
         state.messages.append("Synthesis complete")

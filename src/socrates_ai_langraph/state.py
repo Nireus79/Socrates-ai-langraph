@@ -1,31 +1,18 @@
 """State management for LangGraph workflows."""
 
 from typing import Any, Dict, List
-from pydantic import BaseModel, Field
+from pydantic import BaseModel, Field, ConfigDict
 
 
 class AgentState(BaseModel):
     """State passed between LangGraph nodes."""
 
-    input: str = Field(
-        description="The input to the workflow"
-    )
+    model_config = ConfigDict(arbitrary_types_allowed=True)
 
-    messages: List[str] = Field(
-        default_factory=list,
-        description="Messages from agents"
-    )
+    input: str = Field(description="The input to the workflow")
 
-    results: Dict[str, Any] = Field(
-        default_factory=dict,
-        description="Results from agents"
-    )
+    messages: List[str] = Field(default_factory=list, description="Messages from agents")
 
-    errors: List[str] = Field(
-        default_factory=list,
-        description="Errors encountered"
-    )
+    results: Dict[str, Any] = Field(default_factory=dict, description="Results from agents")
 
-    class Config:
-        """Pydantic config."""
-        arbitrary_types_allowed = True
+    errors: List[str] = Field(default_factory=list, description="Errors encountered")

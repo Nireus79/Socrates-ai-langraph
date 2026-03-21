@@ -4,10 +4,10 @@ Version: 0.1.0
 Summary: Socratic AI integration library for LangGraph - framework-agnostic agents
 Author-email: Socrates AI Contributors <support@socrates-ai.dev>
 License: MIT
-Project-URL: Homepage, https://github.com/Nireus79/Socrates
-Project-URL: Repository, https://github.com/Nireus79/Socrates
-Project-URL: Issues, https://github.com/Nireus79/Socrates/issues
-Project-URL: Documentation, https://github.com/Nireus79/Socrates/tree/main/socrates-ai-langraph/docs
+Project-URL: Homepage, https://github.com/Nireus79/Socrates-ai-langraph
+Project-URL: Repository, https://github.com/Nireus79/Socrates-ai-langraph
+Project-URL: Issues, https://github.com/Nireus79/Socrates-ai-langraph/issues
+Project-URL: Documentation, https://github.com/Nireus79/Socrates-ai-langraph#readme
 Keywords: socrates,ai,langgraph,agents,orchestration,education
 Classifier: Development Status :: 4 - Beta
 Classifier: Intended Audience :: Developers
@@ -23,7 +23,7 @@ Requires-Python: >=3.9
 Description-Content-Type: text/markdown
 License-File: LICENSE
 Requires-Dist: socratic-core>=0.1.1
-Requires-Dist: langgraph>=1.0.0
+Requires-Dist: langgraph>=0.0.9
 Requires-Dist: pydantic>=2.0.0
 Provides-Extra: dev
 Requires-Dist: pytest>=7.0; extra == "dev"

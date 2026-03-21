@@ -10,3 +10,4 @@ src/socrates_ai_langraph.egg-info/SOURCES.txt
 src/socrates_ai_langraph.egg-info/dependency_links.txt
 src/socrates_ai_langraph.egg-info/requires.txt
 src/socrates_ai_langraph.egg-info/top_level.txt
+tests/test_imports.py

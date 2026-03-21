@@ -58,3 +58,16 @@ Homepage = "https://github.com/Nireus79/Socrates-ai-langraph"
 Repository = "https://github.com/Nireus79/Socrates-ai-langraph"
 Issues = "https://github.com/Nireus79/Socrates-ai-langraph/issues"
 Documentation = "https://github.com/Nireus79/Socrates-ai-langraph#readme"
+
+[tool.black]
+line-length = 100
+target-version = ["py39", "py310", "py311", "py312"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+asyncio_mode = "auto"
+
+[tool.ruff]
+line-length = 100
+target-version = "py39"

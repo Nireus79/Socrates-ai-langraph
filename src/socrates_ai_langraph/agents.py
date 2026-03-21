@@ -38,24 +38,18 @@ class CodeAnalysisAgent(BaseAgent):
         Returns:
             Analysis results
         """
-        self.emit_event(
-            EventType.AGENT_START,
-            {"agent": self.name, "task": "code_analysis"}
-        )
+        self.emit_event(EventType.AGENT_START, {"agent": self.name, "task": "code_analysis"})
 
         # Simulated analysis
         result = {
             "complexity": "medium" if len(code) > 100 else "low",
-            "lines": len(code.split('\n')),
+            "lines": len(code.split("\n")),
             "issues": ["missing error handling"] if "try" not in code else [],
             "suggestions": ["add type hints", "improve variable names"],
-            "quality_score": 7.5
+            "quality_score": 7.5,
         }
 
-        self.emit_event(
-            EventType.AGENT_COMPLETE,
-            {"agent": self.name, "result": result}
-        )
+        self.emit_event(EventType.AGENT_COMPLETE, {"agent": self.name, "result": result})
 
         return result
 
@@ -78,7 +72,7 @@ class CodeGenerationAgent(BaseAgent):
         """
         self.emit_event(
             EventType.AGENT_START,
-            {"agent": self.name, "task": "code_generation", "prompt": prompt}
+            {"agent": self.name, "task": "code_generation", "prompt": prompt},
         )
 
         # Simulated code generation
@@ -91,7 +85,7 @@ def solution():
 
         self.emit_event(
             EventType.CODE_GENERATED,
-            {"agent": self.name, "lines": len(generated_code.split('\n'))}
+            {"agent": self.name, "lines": len(generated_code.split("\n"))},
         )
 
         return generated_code
@@ -115,7 +109,7 @@ class KnowledgeRetrievalAgent(BaseAgent):
         """
         self.emit_event(
             EventType.AGENT_START,
-            {"agent": self.name, "task": "knowledge_retrieval", "query": query}
+            {"agent": self.name, "task": "knowledge_retrieval", "query": query},
         )
 
         # Simulated retrieval
@@ -123,18 +117,11 @@ class KnowledgeRetrievalAgent(BaseAgent):
             {
                 "source": "documentation",
                 "content": "Relevant documentation...",
-                "relevance": 0.95
+                "relevance": 0.95,
             },
-            {
-                "source": "examples",
-                "content": "Example code...",
-                "relevance": 0.87
-            },
+            {"source": "examples", "content": "Example code...", "relevance": 0.87},
         ]
 
-        self.emit_event(
-            EventType.KNOWLEDGE_LOADED,
-            {"agent": self.name, "count": len(results)}
-        )
+        self.emit_event(EventType.KNOWLEDGE_LOADED, {"agent": self.name, "count": len(results)})
 
         return results
