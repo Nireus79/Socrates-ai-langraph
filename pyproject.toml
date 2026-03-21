@@ -54,7 +54,7 @@ full = [
 ]
 
 [project.urls]
-Homepage = "https://github.com/Nireus79/Socrates"
-Repository = "https://github.com/Nireus79/Socrates"
-Issues = "https://github.com/Nireus79/Socrates/issues"
-Documentation = "https://github.com/Nireus79/Socrates/tree/main/socrates-ai-langraph/docs"
+Homepage = "https://github.com/Nireus79/Socrates-ai-langraph"
+Repository = "https://github.com/Nireus79/Socrates-ai-langraph"
+Issues = "https://github.com/Nireus79/Socrates-ai-langraph/issues"
+Documentation = "https://github.com/Nireus79/Socrates-ai-langraph#readme"
