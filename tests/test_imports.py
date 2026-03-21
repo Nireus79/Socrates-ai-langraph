@@ -1,7 +1,5 @@
 """Tests for Socrates AI LangGraph module."""
 
-import pytest
-
 
 def test_import_state():
     """Test that state module can be imported."""
